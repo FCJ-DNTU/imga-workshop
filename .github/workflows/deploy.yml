@@ -19,8 +19,13 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   if_merged:
+    name: Check if main branch is merged
     if: github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
