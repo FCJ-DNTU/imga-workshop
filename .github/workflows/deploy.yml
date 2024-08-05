@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v4
       # Install hugo theme
       - run: |
-          sudo apt-getupdate
+          sudo apt-get update
           sudo apt-get install hugo
           sudo hugo version
   
