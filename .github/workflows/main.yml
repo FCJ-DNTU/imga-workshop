@@ -1,0 +1,64 @@
+# Name of flow
+name: production
+
+# The event of github
+# When should it (workflows) run?
+on:
+  # Trigger when pull request is made to master, main
+  # and has type is `closed`, but it isn't enough
+  pull_request:
+    types: [closed]
+    branches: [master, main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged
+    runs-on: ubuntu-latest
+
+  prepare:
+    runs-on: ubuntu-latest
+    needs: if_merged
+    steps:
+      - uses: actions/checkout@v4
+      # Install hugo theme
+      - run: |
+          sudo apt-getupdate
+          sudo apt-get install hugo
+          sudo hugo version
+  
+  build:
+    runs-on: ubuntu-latest
+    needs: prepare
+    steps:
+      - run: hugo --destination /build
+
+  pre_deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload /build only
+          path: '/build'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,32 @@
+# Name of flow
+name: test
+
+defaults:
+  run:
+    working-directory: ./test
+
+# The event of github
+# When should it (workflows) run?
+on:
+  # Trigger when push to master, main
+  push:
+    branches: [master, main]
+  # Trigger when pull request is made to master, main
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  # Define name of job
+  test-before-build:
+    # Define runner
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout this repository to runner
+      # Must use if you want to use this repository
+      - uses: actions/checkout@v4
+      # Install node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Run command to test
+      - run: node --test index_node.test.js

@@ -7,7 +7,7 @@ The workshop of @NguyenAnhTuan1912, around a "extract content of table in image 
   - Setup security group
 - Launch an EC2 instance
   - Setup EC2 instance
-  - Install Python, NodeJS, Git
+  - Install Python, NodeJS, Git, Docker
 - Setup project
   - Install required Python packages
   - Install required NodeJS packages
