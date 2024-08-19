@@ -3,7 +3,6 @@ The workshop of @NguyenAnhTuan1912, around a "extract content of table in image 
 
 ## Outline
 - Introduction
-  - About workshop
   - What is API Gateway?
   - What is Network Load Balancer?
   - What is CloudFront and S3?
@@ -12,21 +11,22 @@ The workshop of @NguyenAnhTuan1912, around a "extract content of table in image 
   - Setup security groups
   - Create IAM Role
   - Launch an EC2 instance
+  - Auto installation
 - Setup project
-  - Install Git and get source code
-  - Install docker engine
-  - Install required Python & NodeJS packages
+  - Install Git
+  - Install docker
+  - Install required packages
 - Create S3 Buckets
   - Store static files
   - Store images from users
 - Host Web Application
-  - Create CloudFront to host web application
+  - Create CloudFront
   - Setup Github Actions
-  - Deploy web application from Github Actions
+  - Deploy web application
 - Host Web server
   - Create Network Load Balancer
   - Create API Gateway
-  - Create Private Integration with VPC Link
+  - Create Private Integration
   - Push docker image to ECR
   - Deploy web server
 - Test result
