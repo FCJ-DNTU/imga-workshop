@@ -2,23 +2,32 @@
 The workshop of @NguyenAnhTuan1912, around a "extract content of table in image to excel" application.
 
 ## Outline
-- Setup network
+- Introduction
+  - About workshop
+  - What is API Gateway?
+  - What is Network Load Balancer?
+  - What is CloudFront and S3?
+- Preparation
   - Setup VPC
-  - Setup security group
-- Launch an EC2 instance
-  - Setup EC2 instance
-  - Install Python, NodeJS, Git, Docker
+  - Setup security groups
+  - Create IAM Role
+  - Launch an EC2 instance
 - Setup project
-  - Install required Python packages
-  - Install required NodeJS packages
-  - Start NodeJS server
-- Launch an S3
+  - Install Git and get source code
+  - Install docker engine
+  - Install required Python & NodeJS packages
+- Create S3 Buckets
   - Store static files
   - Store images from users
-- Use CloudFront to host web application
-- Setup Github Actions
-  - Actions for production
-  - Actions for development
-- Setup API Gateway
+- Host Web Application
+  - Create CloudFront to host web application
+  - Setup Github Actions
+  - Deploy web application from Github Actions
+- Host Web server
+  - Create Network Load Balancer
+  - Create API Gateway
+  - Create Private Integration with VPC Link
+  - Push docker image to ECR
+  - Deploy web server
 - Test result
-- Clear resources
+- Clean up resources
