@@ -8,7 +8,7 @@ chapter = false
 # IMGA - Extract table from image to Excel
 In this workshop, we'll deploy a application which AWS Cloud.
 
-INSERT IMAGE HERE
+![overview](/images/1-introduction/overview.png)
 
 #### Main Content
 In this workshop, we'll go through these steps:
