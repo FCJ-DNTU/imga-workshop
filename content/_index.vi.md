@@ -1,19 +1,19 @@
 +++
-title = "IMGA - Extract table from image to Excel"
+title = "IMGA - Trích xuất dữ liệu bảng thành Excel"
 date = 2024
 weight = 1
 chapter = false
 +++
 
-# IMGA - Extract table from image to Excel
+# IMGA - Trích xuất dữ liệu bảng thành Excel
 
-In this workshop, we'll deploy a application which AWS Cloud.
+Trong bài workshop này, chúng ta sẽ triển khai một ứng dụng lên hạ tầng đám mây AWS.
 
 ![overview](/images/1-introduction/overview.png)
 
-#### Main Content
+#### Nội dung chính
 
-In this workshop, we'll go through these steps:
+Trong bài này, chúng ta sẽ đi qua một số bước dưới đây:
 
 1. [Introduction](1-introduction)
 2. [Preparation](2-preparation)
