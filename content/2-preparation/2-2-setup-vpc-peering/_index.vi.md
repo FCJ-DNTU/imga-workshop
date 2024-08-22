@@ -7,21 +7,24 @@ pre = "2.2. "
 +++
 
 #### Kết nối hai vùng mạng khác nhau
+
 Trong bài này, chúng ta sẽ dùng EC2 ở trong môi trường phát triển để điểu khiển EC2 ở trong môi trường sản phẩm để thực hiện công việc triển khai máy chủ cho ứng dụng. Vì thế mà mình cần phải tạo một kết nối ngang cấp để cho các thiết bị trong 2 VPC có thể giao tiếp với nhau.
 
 Trong giao diện VPC:
-  - Chọn **Peering connection**
-  - Ấn **Create peering connection**
+
+- Chọn **Peering connection**
+- Ấn **Create peering connection**
 
 **INSERT IMAGE HERE**
 
 Trong phần cài đặt:
-  - Tên: `dev-prod-peering`
-  - Trong **Select a local VPC to peer with**, chọn **production-vpc**
-  - Trong **Select another VPC to peer with**, chọn
-    - Account: **My Account**
-    - Region: **This Region** (ap-southeast-1)
-  - Trong **VPC ID (Accepter)**, chọn **development-vpc**
+
+- Tên: `dev-prod-peering`
+- Trong **Select a local VPC to peer with**, chọn **production-vpc**
+- Trong **Select another VPC to peer with**, chọn
+  - Account: **My Account**
+  - Region: **This Region** (ap-southeast-1)
+- Trong **VPC ID (Accepter)**, chọn **development-vpc**
 
 **INSERT IMAGE HERE**
 
@@ -30,12 +33,14 @@ Sau khi tạo xong, thì chúng ta phải chấp nhận việc kết nối ngang
 **INSERT IMAGE HERE**
 
 #### Cài đặt bảng định tuyến trong 2 VPC
+
 Tới đây, thì 2 VPC đã có một "đường" kết nối ngang cấp với nhau, nhưng để mà các thiết bị trong 2 môi trường này có thể thật sự giao tiếp được với nhau, thì sẽ cần phải cấu hình bảng định tuyến cho các bản định tuyến được tạo ở trong các bước trước.
 
 Giờ thì mình trờ lại mục **Route tables**
-  - Chọn **development-rtb-public**
-  - Ở phần giao diện bên dưới, chọn tab **Routes**
-  - Ấn **Edit routes**
+
+- Chọn **development-rtb-public**
+- Ở phần giao diện bên dưới, chọn tab **Routes**
+- Ấn **Edit routes**
 
 **INSERT IMAGE HERE**
 
@@ -44,9 +49,10 @@ Khối IPv4 CIDR của môi trường phát triển là `10.1.0.0/16`, còn môi
 **INSERT IMAGE HERE**
 
 Tiếp theo:
-  - Chọn **production-rtb-public**
-  - Ở phần giao diện bên dưới, chọn tab **Routes**
-  - Ấn **Edit routes**
+
+- Chọn **production-rtb-public**
+- Ở phần giao diện bên dưới, chọn tab **Routes**
+- Ấn **Edit routes**
 
 Ở đây tương tự với ở trên, nhưng mình sẽ làm ngược lại.
 

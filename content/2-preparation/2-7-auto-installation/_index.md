@@ -1,9 +1,9 @@
 +++
-title = "Auto installation"
+title = "Auto deployment and installation"
 date = 2024
-weight = 6
+weight = 7
 chapter = false
-pre = "2.6. "
+pre = "2.7. "
 +++
 
 {{% notice note %}}
@@ -13,43 +13,50 @@ You can skip this section and move on to the next parts. However, if you want to
 In the development environment, there are two parts: FrontEnd and BackEnd.
 
 #### Deploying the website
+
 In our development environment, the website will be deployed through the following steps:
-  - The complete version of the website is uploaded to S3.
-  - CloudFront retrieves the website data from the S3 Bucket (referred to as Origin). A distribution is created to manage this data.
-  - However, this Bucket is private, so CloudFront needs to configure OAI to set it in the Bucket's resource-based policy, allowing the Bucket to "know" the distribution.
-  - CloudFront will then distribute the data to different Edge Locations.
-  - When users access the web application, the browser will fetch information from the nearest Edge Location.
-  - Finally, the content is displayed to the end users.
+
+- The complete version of the website is uploaded to S3.
+- CloudFront retrieves the website data from the S3 Bucket (referred to as Origin). A distribution is created to manage this data.
+- However, this Bucket is private, so CloudFront needs to configure OAI to set it in the Bucket's resource-based policy, allowing the Bucket to "know" the distribution.
+- CloudFront will then distribute the data to different Edge Locations.
+- When users access the web application, the browser will fetch information from the nearest Edge Location.
+- Finally, the content is displayed to the end users.
 
 Typically, to deploy a web application, you need to build -> test -> deploy to the server (upload the web application data) manually.
 
 But in this case, our application will be deployed automatically with Github Actions. Specifically, Github triggers a workflow when the `main` branch of the project is pushed from a developer’s machine or merged from other branches, or a developer can trigger it manually.
 
 At that point, a Runner will handle the tasks (Jobs) in the workflow, executing predefined steps (Steps), specifically:
-  - The web content will be bundled by Webpack.
-  - Then, unnecessary characters will be minimized to reduce the size.
-  - The content is saved into a directory (build).
-  - AWS CLI is set up with credentials from the ACCESS KEY ID and SECRET ACCESS KEY, along with the Bucket name and Region.
-  - AWS will copy the contents from the (build) directory and upload them to S3.
-  - Finally, the tasks are finished, and the Runner cleans up resources.
+
+- The web content will be bundled by Webpack.
+- Then, unnecessary characters will be minimized to reduce the size.
+- The content is saved into a directory (build).
+- AWS CLI is set up with credentials from the ACCESS KEY ID and SECRET ACCESS KEY, along with the Bucket name and Region.
+- AWS will copy the contents from the (build) directory and upload them to S3.
+- Finally, the tasks are finished, and the Runner cleans up resources.
 
 Here’s the workflow.
 
 #### Deploying the web application's server
+
 Deploying the server for the web application is slightly more complex, as we need to write a deployment script in a Docker container. The deployment flow is as follows:
-  - After development, the web server's source code will be built using Docker through scripts.
-  - Once packaged into a Docker Image, it will be uploaded to ECR.
-  - At this point, the DevOps engineer will connect to the EC2 instance in the production environment to pull the Docker image from ECR.
-  - Next, Docker will be run to begin the deployment.
+
+- After development, the web server's source code will be built using Docker through scripts.
+- Once packaged into a Docker Image, it will be uploaded to ECR.
+- At this point, the DevOps engineer will connect to the EC2 instance in the production environment to pull the Docker image from ECR.
+- Next, Docker will be run to begin the deployment.
 
 Specifically, during the build process:
-  - Node and Npm will be installed to set up the required libraries for running the Node Server.
-  - Python and Pip will be installed to perform the core functions.
-  - Python libraries and Tesseract OCR will also be installed.
+
+- Node and Npm will be installed to set up the required libraries for running the Node Server.
+- Python and Pip will be installed to perform the core functions.
+- Python libraries and Tesseract OCR will also be installed.
 
 For the corresponding build process, we have two scripts. These scripts will be executed during the Docker container build:
 
 `backend/nodejs/scripts/install.sh`
+
 ```
 #!/bin/bash
 
@@ -89,6 +96,7 @@ infoln "Install packages: $(npm list -g)"
 ```
 
 `backend/python/scripts/install.sh`
+
 ```
 #!/bin/bash
 
@@ -133,6 +141,7 @@ wget https://raw.githubusercontent.com/opencv/opencv/4.x/data/haarcascades/haarc
 ```
 
 Another script is used to start the server: `backend/nodejs/scripts/start.sh`
+
 ```
 #!/bin/bash
 
@@ -159,6 +168,7 @@ pm2 logs
 ```
 
 Finally, they are combined into a single script: `backend/install.sh`
+
 ```
 #!/bin/bash
 
