@@ -30,7 +30,7 @@ Tiếp theo
 
 {{% notice note %}}
 Ở đây, chúng ta có thể cấu hình yêu cầu người dùng được gửi tới (hay gói tin) một cách tự do hơn khi có thể được tuỳ chọn các subnet mà yêu cầu đó được gửi tới. Trên thực tế, khi thêm target vào trong target group và cả việc chọn subnet trong VPC Link, thì có nghĩa là hệ thống giúp chúng ta cấu hình định tuyến tới các subnets, targes cho các routers, thiết bị.
-{{% notice %}}
+{{% /notice %}}
 
 Sau khi tạo xong, chúng ta sẽ phải đợi cho ENI (Elastic Network Interface) được khởi tạo.
 
@@ -38,7 +38,7 @@ Sau khi tạo xong, chúng ta sẽ phải đợi cho ENI (Elastic Network Interf
 
 {{% notice note %}}
 VPC Link phải được khởi tạo ENI xong mới có thể tạo được tích hợp
-{{% notice %}}
+{{% /notice %}}
 
 #### Tạo Routes
 
@@ -58,7 +58,7 @@ Tiếp theo, Route này sẽ có các thông tin như sau
 
 {{% notice note %}}
 Để tạo Route, thì chúng ta cần phải biết Method và đường dẫn, tương ứng với tài nguyên mà hệ thống của mình cho phép. Ở trong bài này, chúng ta sẽ cấu hình với Method là Any, nghĩa là chấp nhận mọi phương thức HTTP và Path là /{proxy+} cũng đồng nghĩa với việc chấp nhận mọi đường dẫn ở sau URL cơ sở.
-{{% notice %}}
+{{% /notice %}}
 
 #### Kết hợp VPC Link và Route
 
@@ -96,4 +96,4 @@ Và lưu thay đổi
 
 {{% notice note %}}
 Thông số **Access-Control-Allow-Origin** sẽ là **\*** để cấu hình nhanh, khi các bạn làm bài này, thì sau khi triển khai ứng dụng web với CloudFront xong thì về đây sửa lại thành URL của Distribution.
-{{% notice %}}
+{{% /notice %}}

@@ -8,7 +8,7 @@ pre = "3.1. "
 
 {{% notice note %}}
 Để tiếp tục, bạn nên có một tài khoản github và có cài đặt git ở trong máy tính cá nhân.
-{{% notice %}}
+{{% /notice %}}
 
 #### Tạo một repository ở trên Github
 
