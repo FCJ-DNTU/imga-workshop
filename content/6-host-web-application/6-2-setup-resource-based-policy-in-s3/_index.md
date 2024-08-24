@@ -8,13 +8,17 @@ pre = "6.2. "
 
 #### Grant Access to the S3 Bucket for CloudFront
 
+In the **Origins** tab, expand the **Origin access** column. You will see a string after the final **/**, copy it.
+
+![6-host-web-application](/images/6-host-web-application/6-2-1-view-distribution-origin-info.png)
+
 Go back to S3 and open the `imga-website` Bucket. In the **Permissions** tab, under the Bucket Policy section:
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-2-2-setup-resource-based-policy-in-website-bucket.png)
 
 If the policy was automatically created during the CloudFront setup, no further action is needed. However, if no policy exists, we will need to add one manually. Click **Edit** to open the policy editing interface like this:
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-2-3-add-policy-and-apply.png)
 
 You can use the following sample policy:
 

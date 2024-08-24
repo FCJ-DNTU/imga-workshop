@@ -16,14 +16,14 @@ Trên thực tế, các ứng dụng của chúng ta sẽ được quản lý v�
 
 Trong bài này chúng ta sẽ thực hiện với Github, chúng ta sẽ vào mã nguồn dự án đó thông qua đường dẫn này `https://github.com/FCJ-DNTU/imga`.
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-1-1-folk-repository.png)
 
 Trên màn hình, chúng ta ấn vào nút Fork. Và điền các thông tin cần thiết
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-1-2-create-folk.png)
 
 Sau đó là ấn **Create fork**, và chúng ta đã có được bản sao của dự án này ở trong tài khoản Github.
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-1-3-folked-repository.png)
 
 Dự án này sẽ được sao chép về máy vi tính trong local và máy chủ EC2 trong môi trường phát triển, để thực hiện các công việc phát triển.

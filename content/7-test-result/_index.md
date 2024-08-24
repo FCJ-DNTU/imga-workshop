@@ -18,24 +18,24 @@ pre = "7. "
 
 In the main interface, we will select a sample image to test the result.
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![7-test-result](/images/7-test-result/7-1-open-app-and-prepare-to-test.png)
+![7-test-result](/images/7-test-result/7-2-choose-image.png)
 
 After selecting, click **Scan**.
 
-**INSERT IMAGE HERE**
+![7-test-result](/images/7-test-result/7-3-upload-image.png)
 
 After a short wait, an Excel file will be downloaded.
 
-**INSERT IMAGE HERE**
+![7-test-result](/images/7-test-result/7-4-save-excel-file.png)
 
 Save the file and open it to view the results.
 
-**INSERT IMAGE HERE**
+![7-test-result](/images/7-test-result/7-5-view-result.png)
 
 Go to the S3 Bucket responsible for storing images, which in this case is **imga-images**, to check.
 
-**INSERT IMAGE HERE**
+![7-test-result](/images/7-test-result/7-6-view-images.png)
 
 Congratulations! You've just completed a workshop exercise. Hopefully, you learned many new things from this workshop.
 

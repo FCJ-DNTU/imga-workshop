@@ -17,7 +17,7 @@ Chúng ta có một file bash script ở trong thư mục `nodejs/scripts/start.
 - Vào trong thư mục `imga/backend`, mã nguồn của backend của dự án
 - Tiếp theo là gõ lệnh `vim nodejs/scripts/start.sh` để chúng ta có mở text editor với tệp này bằng VIM
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-1-prepare-to-build.png)
 
 Trong đây, có một số biến môi trường như là
 
@@ -32,24 +32,24 @@ Trong đó, chúng ta có `AWS_REGION` (là Region mà các S3 Buckets được 
 - Ẩn tổ hợp **Shift + ;** để mở Command
 - Gõ **:wq** để lưu và thoát
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-2-setup-env-in-script.png)
 
 #### Build docker image
 
 Theo như các hướng dẫn của lệnh push ở trên mà chúng ta xem hồi nãy, thì đầu tiên phải đăng nhập vào trong Docker với credential lấy từ trên ECR thông qua lệnh `aws ecr get-login-password`
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-3-login-to-docker.png)
 
 Sau khi đăng nhập được rồi thì chúng ta tiến hành đóng gói thành Docker image
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-4-build-docker-image.png)
 
 Kiểm tra lại image đã được build chưa với lệnh `docker image ls` và cuối cùng là đẩy image lên trên repository mà chúng ta tạo ở bước trước
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-host-web-server.png)
 
 Vào trong repository đó để kiểm tra
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-6-check-docker-image.png)
 
 Như vậy thì hiện tại docker image đã tồn tại ở trong private repository của chúng ta, bước tiếp theo chúng ta sẽ triển khai web server.

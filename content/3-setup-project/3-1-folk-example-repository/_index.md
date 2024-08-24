@@ -16,14 +16,14 @@ In practice, our applications will be managed by source control managers like Gi
 
 In this example, we will use GitHub. You can access the project source code at this link: `https://github.com/FCJ-DNTU/imga`.
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-1-1-folk-repository.png)
 
 On the screen, click the **Fork** button and fill in the necessary details.
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-1-2-create-folk.png)
 
 Then, click **Create fork**, and now we have a copy of this project in our GitHub account.
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-1-3-folked-repository.png)
 
 This project will be cloned to your local machine and the EC2 instance in the development environment for development tasks.

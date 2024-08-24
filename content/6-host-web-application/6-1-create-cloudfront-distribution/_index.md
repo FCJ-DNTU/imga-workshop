@@ -13,11 +13,11 @@ In the main interface:
 - Search for `CloudFront`.
 - Select **CloudFront**.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-1-1-search-cloudfront.png)
 
 You will see the **Distribution** interface. Click **Create distribution**.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-1-2-distribution-page.png)
 
 Here, we need to fill in a few details:
 
@@ -28,15 +28,15 @@ Here, we need to fill in a few details:
   - Click to create a new OAI (Origin Access Identity), as the S3 Bucket needs to know which principal is accessing its resources. Here, we create an OAI so that we can later configure the resource-based policy.
   - Then, select **Yes, update the bucket policy**.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-1-3-setup-distribution.png)
 
 Next, leave the following configurations as default.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-1-4-setup-distribution.png)
 
 And these configurations as well.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-1-5-setup-distribution.png)
 
 In the **Web Application Firewall (WAF)** section, turn off the firewall feature since we won't be using it in this workshop. Under the **Settings** section:
 
@@ -44,12 +44,8 @@ In the **Web Application Firewall (WAF)** section, turn off the firewall feature
 - **Default root object**: Set to `index.html`.
 - Leave the remaining configurations as default.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-1-6-setup-distribution.png)
 
 Once created, you will see that the distribution is being deployed to the Edge Locations.
 
-**INSERT IMAGE HERE**
-
-In the **Origins** tab, expand the **Origin access** column. You will see a string after the final **/**. Copy this string for later use.
-
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-1-7-check-result.png)

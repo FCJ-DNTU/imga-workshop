@@ -17,7 +17,7 @@ First, reconnect to the EC2 instance via SSH in the production environment.
 - Navigate to the `imga/backend` directory, which contains the backend source code for the project.
 - Then, run the command `vim nodejs/scripts/start.sh` to open this file in the VIM text editor.
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-1-prepare-to-build.png)
 
 Inside this script, there are several environment variables like:
 
@@ -32,24 +32,24 @@ Among these, `AWS_REGION` (the region where the S3 Buckets are located) and `BUC
 - Press **Shift + ;** to open the Command Mode.
 - Type `:wq` to save and exit.
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-2-setup-env-in-script.png)
 
 #### Build the Docker Image
 
 Following the push commands we reviewed earlier, the first step is to log in to Docker using credentials retrieved from ECR with the command `aws ecr get-login-password`.
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-3-login-to-docker.png)
 
 Once logged in, proceed to package the source code into a Docker image.
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-4-build-docker-image.png)
 
 Check if the image has been built with the command `docker image ls`. Finally, push the image to the repository created earlier.
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-host-web-server.png)
 
 Go to the repository to verify.
 
-**INSERT IMAGE HERE**
+![5-host-web-server](/images/5-host-web-server/5-5-6-check-docker-image.png)
 
 Now, the Docker image exists in our private repository. The next step will be to deploy the web server.

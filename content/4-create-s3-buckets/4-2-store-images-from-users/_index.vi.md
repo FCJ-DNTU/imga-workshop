@@ -19,16 +19,16 @@ Chúng ta sẽ thiết lập S3 bucket này với các thông tin
 - Name: `imga-images`
 - Object Ownership: ACLs disable
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-11-setup-s3-bucket-for-images.png)
 
 - Tích vào **Block all public access**
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-12-setup-s3-bucket-for-images.png)
 
 Ở bước này cũng tương tự, dùng kiểu mã hoá mặc định và tắt Bucket key
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-13-setup-and-create-images-bucket.png)
 
 Ấn **Create bucket** và giờ chúng ta đã có 2 S3 Buckets
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-14-check-buckets.png)

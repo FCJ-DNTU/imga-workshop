@@ -16,7 +16,7 @@ Vì để máy EC2 có thể đóng gói được mã nguồn và máy EC2 ở m
 sudo yum install -y docker
 ```
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-2-1-install-docker-in-dev-ec2.png)
 
 Sau khi tải xong thì chúng ta sẽ bắt đầu dịch vụ của Docker trên linux
 
@@ -34,9 +34,12 @@ newgrp docker
 docker ps
 ```
 
+![3-setup-project](/images/3-setup-project/3-2-2-start-docker-service-in-dev-ec2.png)
+
 Thứ hai, chúng ta sẽ kết nối SSH tới máy EC2 trong môi trường máy chủ và cài Docker giống như với các bước trên
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-2-3-install-docker-in-prod-ec2.png)
+![3-setup-project](/images/3-setup-project/3-2-4-start-docker-service-in-prod-ec2.png)
 
 #### Cài đặt Git
 
@@ -46,15 +49,17 @@ Thứ hai, chúng ta sẽ kết nối SSH tới máy EC2 trong môi trường m�
 sudo yum install -y git-all
 ```
 
+![3-setup-project](/images/3-setup-project/3-2-5-install-git-in-dev-ec2.png)
+
 Vào trong repository của dự án trên github, lấy đường dẫn để có thể tải được mã nguồn
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-2-6-copy-folked-repo-uri.png)
 
 ```bash
 git clone https://github.com/{your-user-name}/imga
 ```
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-2-7-clone-repo-to-dev-ec2.png)
 
 Vậy là xong, chúng ta đã có
 

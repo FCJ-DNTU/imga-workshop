@@ -50,7 +50,7 @@ In the **Network settings** section, click **Edit**:
 
 In the setup section, configure the following details as shown in the image:
 
-- Name: `prod-ec2`
+- Name: `imga-server`
 - Application and OS Images: **Amazon Linux 2023 AMI**
 - Instance type: **t3.small**
 - Select a key pair if you already have one. If not, create one as follows:

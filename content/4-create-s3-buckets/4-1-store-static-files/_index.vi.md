@@ -16,44 +16,44 @@ Trong màn hình giao diện chính của console
 - Chọn **S3**
 - Ấn **Create bucket**
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-1-search-s3.png)
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-2-s3-page.png)
 
 S3 Bucket này sẽ được tạo ở trong Region `ap-southeast-1`, Bucket này sẽ có một số thông tin như sau
 
 - Name: `imga-website`
 - Object Ownership: vì là private bucket, nên chúng ta sẽ chọn **ACLs disable**.
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-3-setup-s3-bucket-for-website.png)
 
 - Block Public Access settings for this bucket: tích vào **Block all public access**
 - Bucket versioning: Enable (vì chúng ta có thể có nhiều bản cập nhật cho ứng dụng)
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-4-setup-s3-bucket-for-website.png)
 
 - Encryption type: Server-side encryption with Amazon S3 managed keys (SSE-S3) (mặc định)
 - Bucket key: Disable
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-5-setup-and-create-website-bucket.png)
 
 Sau khi tạo xong thì chúng ta có thể xem lại
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-6-website-bucket-is-created.png)
 
 #### Mở tính năng Static website hosting
 
 Giờ chúng ta sẽ vào bên trong Bucket này, vào trong tab **Properties**
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-7-website-bucket-properties.png)
 
 Kéo xuống dưới cùng, tới mục **Static website hosting**, ấn **Edit**
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-8-edit-static-website-hosting.png)
 
 Chúng ta sẽ cấu hình như hình bên dưới
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-9-setup-static-website-hosting.png)
 
 Và xác nhận. Khi mở tính năng này, thì mình có thể thấy ở trong phần **Properties** như sau
 
-**INSERT IMAGE HERE**
+![4-create-s3-buckets](/images/4-create-s3-buckets/4-1-10-check-result.png)

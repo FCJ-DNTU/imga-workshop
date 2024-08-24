@@ -16,7 +16,7 @@ First, we need to SSH into the EC2 instance in the development environment and i
 sudo yum install -y docker
 ```
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-2-1-install-docker-in-dev-ec2.png)
 
 After the installation, we will start the Docker service on Linux:
 
@@ -34,9 +34,12 @@ newgrp docker
 docker ps
 ```
 
+![3-setup-project](/images/3-setup-project/3-2-2-start-docker-service-in-dev-ec2.png)
+
 Next, SSH into the EC2 instance in the production environment and install Docker following the same steps as above.
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-2-3-install-docker-in-prod-ec2.png)
+![3-setup-project](/images/3-setup-project/3-2-4-start-docker-service-in-prod-ec2.png)
 
 #### Installing Git
 
@@ -46,15 +49,17 @@ To clone the project we just forked onto the EC2 instance in the development env
 sudo yum install -y git-all
 ```
 
+![3-setup-project](/images/3-setup-project/3-2-5-install-git-in-dev-ec2.png)
+
 Go to the project repository on GitHub and copy the URL to clone the source code.
 
-**INSERT IMAGE HERE**
+![3-setup-project](/images/3-setup-project/3-2-6-copy-folked-repo-uri.png)
 
 ```bash
 git clone https://github.com/{your-user-name}/imga
 ```
 
-INSERT IMAGE HERE
+![3-setup-project](/images/3-setup-project/3-2-7-clone-repo-to-dev-ec2.png)
 
 And that's it! We now have:
 

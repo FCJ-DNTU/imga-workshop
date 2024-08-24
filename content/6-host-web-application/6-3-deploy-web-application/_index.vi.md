@@ -12,11 +12,11 @@ Trên lý thuyết, chỉ cần đưa được dữ liệu web lên S3 Bucket l�
 
 Vào trong respository mà từ đầu chúng ta đã sao chép vào trong tài khoản cá nhân, tiến hành tải mã nguồn của dự án này về như cách mà chúng ta làm ở trong máy EC2
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-1-clone-folked-repo.png)
 
 Khi đã sao chép xong, thì mở dự án với VSCode, vào trong tệp sau để sửa lại endpoint của API. Sửa lại thành endpoint của API Gateway
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-2-setup-endpoint.png)
 
 #### Tạo access key
 
@@ -29,27 +29,27 @@ Trước khi tạo workflow thì mình sẽ cần phải có một IAM User nào
 
 Trong giao diện chính của **IAM**, chọn Users
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-3-iam-page.png)
 
 Trong danh sách User, chọn một người dùng có quyền truy cập vào S3 Bucket
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-4-select-user.png)
 
 Trong trang thông tin của người dùng này, mình sẽ tạo một access key mới
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-5-select-create-access-key.png)
 
 Ở đây, chúng ta sẽ chọn trường hợp sử dụng là **Other**, rồi ân **Next**
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-6-select-use-case.png)
 
 Tiếp theo các bạn có thể nhập mô tả hoặc bỏ quả, sau đó ấn **Create access key**
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-7-describe.png)
 
 Sau khi tạo xong, các bạn nên tải về để dùng sau
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-8-key-created.png)
 
 ### Triển khai
 
@@ -58,7 +58,7 @@ Khi đã có được Access Key và Serect Access Key, thì giờ chúng ta s�
 - Mở tab **Settings**
 - Xổ mục **Serects and variables** xuống và chọn **Actions**
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-9-create-secret.png)
 
 Ấn **New repository serect** để tiến cài đặt các thông số này. Vì ở đây là thông tin mật, nên tôi sẽ không cài đặt ở đây, nhưng có 4 thống số mà chúng ta cần phải cài.
 
@@ -69,27 +69,31 @@ Khi đã có được Access Key và Serect Access Key, thì giờ chúng ta s�
 
 Sau khi thiết lập xong, chúng ta sẽ có các secret như này
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-10-check-secrets.png)
+
+Trước khi có thể chạy được workflow, thì chúng ta phải vào trong **Actions**, ấn **I understand my workflows, go ahead and enable them** để mở workflow.
+
+![6-host-web-application](/images/6-host-web-application/6-3-11-allow-github-actions.png)
 
 Giờ thì tiến hành đẩy những thay đổi trong mã nguồn lên `main` branch của dự án thôi, khi đẩy xong thì Github sẽ kích hoạt workflow.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-12-push-code-to-trigger-workflow.png)
 
 Workflow sẽ chạy như thế này
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-13-workflow-is-running.png)
+![6-host-web-application](/images/6-host-web-application/6-3-14-workflow-runs-successfully.png)
 
 Khi chạy xong, chúng ta vào trong S3 Bucket chứa website để kiểm tra, và thấy được là dữ liệu website cần thiết đã được tải lên đầy đủ.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-15-check-result.png)
 
 Sao chép URL trong distribution để kiểm tra kết quả
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-16-copy-url-of-distribution.png)
 
 Kết quả
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-17-our-website.png)
 
 Vậy thì chúng ta đã hoàn thành được các công việc cấu hình và triển khai ứng dụng, giờ thì là lúc kiểm tra xem ứng dụng của chúng ta có hoạt động ổn định hay không.

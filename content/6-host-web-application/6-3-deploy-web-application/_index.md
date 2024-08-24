@@ -12,11 +12,11 @@ In theory, as long as the web data is uploaded to the S3 Bucket, users can acces
 
 Go to the repository that we cloned into our personal account at the beginning and download the source code just like we did on the EC2 instance.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-1-clone-folked-repo.png)
 
 Once the project is cloned, open it in VSCode and modify the API endpoint in the following file. Change it to the API Gateway endpoint.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-2-setup-endpoint.png)
 
 #### Create an access key
 
@@ -29,27 +29,27 @@ Here, we'll use the second method.
 
 In the **IAM** interface, select Users.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-3-iam-page.png)
 
 In the User list, choose a user with access to the S3 Bucket.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-4-select-user.png)
 
 On the user's information page, create a new access key.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-5-select-create-access-key.png)
 
 Select **Other** as the use case, then click **Next**.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-6-select-use-case.png)
 
 You can add a description or skip this step, then click **Create access key**.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-7-describe.png)
 
 After creation, download the key for future use.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-8-key-created.png)
 
 ### Deployment
 
@@ -58,7 +58,7 @@ Now that we have the Access Key and Secret Access Key, we'll configure the corre
 - Open the **Settings** tab.
 - Expand **Secrets and variables**, then choose **Actions**.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-9-create-secret.png)
 
 Click **New repository secret** to configure these settings. Since this is sensitive information, I won't configure it here, but there are four values we need:
 
@@ -69,27 +69,31 @@ Click **New repository secret** to configure these settings. Since this is sensi
 
 After setting these up, your secrets should look like this:
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-10-check-secrets.png)
+
+Before our workflow can be triggerd by Github Actions, we need to go to **Actions**, press **I understand my workflows, go ahead and enable them** to open our workflow.
+
+![6-host-web-application](/images/6-host-web-application/6-3-11-allow-github-actions.png)
 
 Now, push the changes in the source code to the `main` branch of the project. Once pushed, GitHub will trigger the workflow.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-12-push-code-to-trigger-workflow.png)
 
 The workflow will run like this:
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-13-workflow-is-running.png)
+![6-host-web-application](/images/6-host-web-application/6-3-14-workflow-runs-successfully.png)
 
 When it's finished, go to the S3 Bucket that contains the website to check, and confirm that all necessary web data has been uploaded.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-15-check-result.png)
 
 Copy the URL from the CloudFront distribution to check the result.
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-16-copy-url-of-distribution.png)
 
 Result:
 
-**INSERT IMAGE HERE**
+![6-host-web-application](/images/6-host-web-application/6-3-17-our-website.png)
 
 Now, we've completed the configuration and deployment tasks. It's time to check if our application is running smoothly.

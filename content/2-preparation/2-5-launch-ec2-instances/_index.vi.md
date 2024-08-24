@@ -50,7 +50,7 @@ Trong phần Network settings, ấn **Edit**
 
 Trong phần cài đặt, chúng ta sẽ thiết lập các thông tin như trong hình
 
-- Name: `prod-ec2`
+- Name: `imga-server`
 - Application and OS Images: **Amazon Linux 2023 AMI**
 - Instance type: **t3.small**
 - Chọn một key-pair nếu như chúng ta đã có các key-pair. Nếu không thì tạo như sau:
