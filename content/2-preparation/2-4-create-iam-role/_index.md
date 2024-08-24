@@ -35,25 +35,25 @@ On the home page:
 - Search for `IAM`
 - Select **IAM**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-1-search-iam.png)
 
 On the IAM home page:
 
 - Select **Policies**
 - Click **Create policy**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-2-create-policy.png)
 
 In **Select a service**, we will:
 
 - Search for `Elastic Container Registry`
 - Select **Elastic Container Registry**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-3-search-ecr.png)
 
 Next, we will select a few permissions in **List** and **Read** as shown in the image. Check **Any in this account** under Resources (Specific).
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-3-setup-read-ecr-permission.png)
 
 After that, enter some details for the policy:
 
@@ -61,11 +61,11 @@ After that, enter some details for the policy:
 - Description: `Allow pull images, describe repositories`
 - Review the information and click **Create policy**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-4-create-read-ecr-policy.png)
 
 Similarly, we will now create another policy for the ECR service with **Write** permissions.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-5-setup-write-ecr-permission.png)
 
 Details:
 
@@ -73,7 +73,7 @@ Details:
 - Description: `Allow push and delete images`
 - Review the information and click **Create policy**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-6-create-write-ecr-policy.png)
 
 #### Create S3 access policy for IAM Role
 
@@ -83,16 +83,16 @@ Next, in the policy creation interface:
 - Select **S3**
 - Click **Next**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-7-search-s3-permission.png)
 
 Next, we will add **List**, **Read**, and **Write** permissions as follows:
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-8-setup-s3-list-permission.png)
+![2-image](/images/2-preparation/2-4-9-setup-s3-get-permission.png)
+![2-image](/images/2-preparation/2-4-10-setup-s3-write-permission.png)
 
 In **Resources**, select **Specific** and check Any for both **bucket** and **object**.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-11-setup-s3-resources.png)
 
 Next, we will configure the details for this policy:
 
@@ -100,11 +100,11 @@ Next, we will configure the details for this policy:
 - Description: `Allow read, write and delete Objects in S3 Bucket`
 - Review the information and click **Create policy**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-12-create-s3-policy.png)
 
 In the policy list, under **Filter by Type**, select **Customer managed** to check the policies.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-13-check-policy.png)
 
 #### Create IAM Role for EC2 in the development environment
 
@@ -113,7 +113,7 @@ After creating the policies, we will now assign them to IAM Roles, starting with
 - Select **Roles**
 - Click **Create role**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-14-roles-page.png)
 
 Next, in **Select trusted entity**:
 
@@ -122,19 +122,19 @@ Next, in **Select trusted entity**:
   - Service or use case: EC2
   - Use case: EC2
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-15-setup-dev-role.png)
 
 In **Add permissions**:
 
 - Select all the policies we just created
 - Click **Next**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-16-add-policies-to-dev-role.png)
 
 Name the Role `DevEC2` and create the Role.
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-17-setup-dev-role-info.png)
+![2-image](/images/2-preparation/2-4-18-check-and-create-dev-role.png)
 
 #### Create IAM Role for EC2 in the production environment
 
@@ -144,13 +144,13 @@ Similarly, follow the same steps as creating the Role for EC2 in the development
 - Select the 2 policies: `ReadECRRepositoryContent` and `RWDS3Object`
 - Click **Next**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-19-add-policies-to-prod-role.png)
 
 Name the Role `ProdEC2` and create the Role.
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-20-setup-prod-role-info.png)
+![2-image](/images/2-preparation/2-4-21-check-and-create-prod-role.png)
 
 Finally, review the 2 IAM Roles we just created.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-4-22-check-roles.png)

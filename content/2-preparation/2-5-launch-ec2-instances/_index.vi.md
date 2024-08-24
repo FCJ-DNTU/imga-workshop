@@ -13,11 +13,11 @@ pre = "2.5. "
 - Tìm `EC2`
 - Chọn **EC2**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-1-search-ec2.png)
 
 Trong trang của của EC2, chúng ta ấn **Launch instance**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-2-setup-to-launch-dev-ec2.png)
 
 Trong phần cài đặt, chúng ta sẽ thiết lập các thông tin như trong hình
 
@@ -31,8 +31,8 @@ Trong phần cài đặt, chúng ta sẽ thiết lập các thông tin như tron
   - **Private key file**: `.pem`
   - Chọn **Create key pair**
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-3-setup-dev-ec2-info-1.png)
+![2-image](/images/2-preparation/2-5-4-setup-dev-ec2-info-2.png)
 
 Trong phần Network settings, ấn **Edit**
 
@@ -44,7 +44,7 @@ Trong phần Network settings, ấn **Edit**
   - Chọn SG **dev-ec2-sg** chúng ta tạo hồi nãy
 - Cuối cùng là **Launch instance**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-5-setup-and-launch-dev-ec2.png)
 
 #### Tạo và khởi động máy EC2 trong môi trường sản phẩm
 
@@ -60,8 +60,8 @@ Trong phần cài đặt, chúng ta sẽ thiết lập các thông tin như tron
   - **Private key file**: `.pem`
   - Chọn **Create key pair**
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-6-setup-to-launch-imga-server.png)
+![2-image](/images/2-preparation/2-5-7-setup-imga-server-info-1.png)
 
 Trong phần Network settings, ấn **Edit**
 
@@ -73,8 +73,8 @@ Trong phần Network settings, ấn **Edit**
   - Chọn SG **prod-ec2-sg** chúng ta tạo hồi nãy
 - Cuối cùng là **Launch instance**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-8-setup-and-launch-imga-server.png)
 
 Cuối cùng là chúng ta sẽ kiểm tra xem 2 EC2 được tạo đã chạy hay chưa.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-9-check.png)

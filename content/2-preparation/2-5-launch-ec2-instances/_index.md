@@ -13,11 +13,11 @@ On the homepage:
 - Search for `EC2`
 - Select **EC2**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-1-search-ec2.png)
 
 On the EC2 page, click **Launch instance**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-2-setup-to-launch-dev-ec2.png)
 
 In the setup section, we will configure the following information as shown in the image:
 
@@ -31,8 +31,8 @@ In the setup section, we will configure the following information as shown in th
   - **Private key file**: `.pem`
   - Click **Create key pair**
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-3-setup-dev-ec2-info-1.png)
+![2-image](/images/2-preparation/2-5-4-setup-dev-ec2-info-2.png)
 
 In the **Network settings** section, click **Edit**:
 
@@ -44,7 +44,7 @@ In the **Network settings** section, click **Edit**:
   - Choose the SG **dev-ec2-sg** we created earlier
 - Finally, click **Launch instance**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-5-setup-and-launch-dev-ec2.png)
 
 #### Create and launch EC2 instances in the production environment
 
@@ -60,8 +60,8 @@ In the setup section, configure the following details as shown in the image:
   - **Private key file**: `.pem`
   - Click **Create key pair**
 
-**INSERT IMAGE HERE**
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-6-setup-to-launch-imga-server.png)
+![2-image](/images/2-preparation/2-5-7-setup-imga-server-info-1.png)
 
 In the **Network settings** section, click **Edit**:
 
@@ -73,8 +73,8 @@ In the **Network settings** section, click **Edit**:
   - Choose the SG **prod-ec2-sg** we created earlier
 - Finally, click **Launch instance**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-8-setup-and-launch-imga-server.png)
 
 Lastly, I will check if both EC2 instances are running.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-5-9-check.png)

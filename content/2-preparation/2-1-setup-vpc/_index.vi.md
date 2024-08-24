@@ -14,7 +14,7 @@ Trong phần này, chúng ta sẽ cấu hình VPC nhanh cho hạ tầng của b�
 - Chọn **VPC**
 - Trong trang chủ của **VPC**, ấn **Create VPC**.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-1-1-vpc-page.png)
 
 Trong phần **VPC Settings**:
 
@@ -23,7 +23,7 @@ Trong phần **VPC Settings**:
 - IPv4 CIDR Block: `10.0.0.0/16`, không có CIDR Block cho IPv6
 - Tenancy: **Default**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-1-2-create-prod-vpc.png)
 
 Tiếp theo:
 
@@ -39,20 +39,19 @@ Tiếp theo:
 Trên thực tế, mình nên cấu hình thủ công để có thể có được các tài nguyên theo ý mình. Trong hạ tầng của bài này, thì môi trường sản phẩm chỉ có 2 subnets là private và public; còn môi trường phát triển chỉ có 1 public subnet.
 {{% /notice %}}
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-1-3-create-prod-vpc.png)
 
 Và chúng ta sẽ chọn **Enable DNS hostname** và **Enable DNS resolution** để EC2 trong private subnet có thể tải nội dung từ ngoài internet.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-1-4-setup-prod-vpc-dns.png)
 
 Chờ cho VPC được cài đặt
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-1-5-creating-prod-vpc.png)
 
 #### Thiết lập VPC cho môi trường phát triển
 
 Tương tự với VPC cho môi trường sản phẩm, giờ chúng ta sẽ tạo tự động VPC cho môi trường phát triển. Ở đây các bạn xem các cấu hình bên trong ảnh theo từng bước.
 
-**INSERT IMAGE HERE**
-
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-1-6-create-dev-vpc.png)
+![2-image](/images/2-preparation/2-1-7-setup-dev-vpc-dns.png)

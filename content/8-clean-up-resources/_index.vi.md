@@ -65,7 +65,7 @@ Chờ cho NAT Gateway hoàn toàn được xoá, thì tiếp theo vào trong dan
 
 {{% notice note %}}
 VPC Link có tạo ENI, và vì ENI nên nó cũng dùng Elastic IP. Nhưng vì chúng ta đã xoá VPC Link nên Elastic IP cũng đã bị xoá.
-{{% notice %}}
+{{% /notice %}}
 
 #### Xoá VPC Peering và các tài nguyên VPC
 

@@ -15,7 +15,7 @@ In the VPC console:
 - Select **Peering connection**
 - Click **Create peering connection**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-1-vpc-peering-page.png)
 
 In the settings:
 
@@ -26,11 +26,11 @@ In the settings:
   - Region: **This Region** (ap-southeast-1)
 - In **VPC ID (Accepter)**, select **development-vpc**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-2-create-vpc-peering.png)
 
 After creating it, we need to accept the newly established peering connection.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-3-accept-peering.png)
 
 #### Configure route tables in both VPCs
 
@@ -42,11 +42,11 @@ Now, go back to **Route tables**
 - In the bottom interface, choose the **Routes** tab
 - Click **Edit routes**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-4-rtb-page-dev.png)
 
 The IPv4 CIDR block for the development environment is `10.1.0.0/16`, and for the production environment, it's `10.0.0.0/16`. To allow communication, we need to add the IPv4 CIDR block of the production environment, with the target being the **Peering Connection** that we just created.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-5-edit-dev-rtb.png)
 
 Next:
 
@@ -56,6 +56,7 @@ Next:
 
 Here, similarly to the above, but we'll do it in reverse.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-6-rtb-page-prod.png)
+![2-image](/images/2-preparation/2-2-7-edit-prod-rtb.png)
 
 Once this setup is done, the EC2 instance in the public subnet of the development environment will be able to communicate with the EC2 instance in the private subnet of the production environment. However, the EC2 instance in the development environment cannot initiate communication with the EC2 instance in the production environment.

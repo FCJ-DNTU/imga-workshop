@@ -17,4 +17,6 @@ Trước khi đi vào cài đặt các tài nguyên chính, thì đầu tiên ch
 3. [Thiết lập security groups](2-3-setup-security-groups)
 4. [Tạo IAM Role](2-4-create-iam-role)
 5. [Khởi động 2 máy EC2](2-5-launch-ec2-instances)
-6. [Tự động cài đặt, triển khai](2-6-auto-installation)
+6. [Gán IAM Roles và thiết lập cài đặt Metadata cho các EC2](2-6-attach-iam-roles-and-configure-ec2-metadata)
+7. [Thiết lập NAT Gateway](2-7-setup-nat-gateway)
+8. [Tự động cài đặt, triển khai](2-6-auto-installation)

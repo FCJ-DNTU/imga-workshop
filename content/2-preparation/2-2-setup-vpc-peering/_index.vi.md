@@ -15,7 +15,7 @@ Trong giao diện VPC:
 - Chọn **Peering connection**
 - Ấn **Create peering connection**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-1-vpc-peering-page.png)
 
 Trong phần cài đặt:
 
@@ -26,11 +26,11 @@ Trong phần cài đặt:
   - Region: **This Region** (ap-southeast-1)
 - Trong **VPC ID (Accepter)**, chọn **development-vpc**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-2-create-vpc-peering.png)
 
 Sau khi tạo xong, thì chúng ta phải chấp nhận việc kết nối ngang cấp mới được thiết lập
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-3-accept-peering.png)
 
 #### Cài đặt bảng định tuyến trong 2 VPC
 
@@ -42,11 +42,11 @@ Giờ thì mình trờ lại mục **Route tables**
 - Ở phần giao diện bên dưới, chọn tab **Routes**
 - Ấn **Edit routes**
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-4-rtb-page-dev.png)
 
 Khối IPv4 CIDR của môi trường phát triển là `10.1.0.0/16`, còn môi trường sản phẩm là `10.0.0.0/16`, để có thể giao tiếp được, thì mình sẽ cần phải thêm khối IPv4 CIDR của môi trường sản phẩm, với target là **Peering Connection** mà mình tạo hồi nãy.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-5-edit-dev-rtb.png)
 
 Tiếp theo:
 
@@ -56,6 +56,7 @@ Tiếp theo:
 
 Ở đây tương tự với ở trên, nhưng mình sẽ làm ngược lại.
 
-**INSERT IMAGE HERE**
+![2-image](/images/2-preparation/2-2-6-rtb-page-prod.png)
+![2-image](/images/2-preparation/2-2-7-edit-prod-rtb.png)
 
 Khi mà mình thiết lập xong, thì EC2 ở trong public subnet của môi trường phát triển sẽ có thể giao tiếp được với EC2 ở trong private subnet của môi trường phát triển. Tuy nhiên, EC2 của môi trường phát triển không thể giao tiếp chủ động với EC2 trong môi trường phát triển được.
