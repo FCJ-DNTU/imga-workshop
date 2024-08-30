@@ -6,14 +6,6 @@ chapter = false
 pre = "7. "
 +++
 
-+++
-title = "Check the Result"
-date = 2024
-weight = 7
-chapter = false
-pre = "7. "
-+++
-
 #### Test Result
 
 In the main interface, we will select a sample image to test the result.

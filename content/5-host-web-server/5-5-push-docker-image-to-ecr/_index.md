@@ -46,7 +46,7 @@ Once logged in, proceed to package the source code into a Docker image.
 
 Check if the image has been built with the command `docker image ls`. Finally, push the image to the repository created earlier.
 
-![5-host-web-server](/images/5-host-web-server/5-5-host-web-server.png)
+![5-host-web-server](/images/5-host-web-server/5-5-5-push-docker-image-to-ecr.png)
 
 Go to the repository to verify.
 

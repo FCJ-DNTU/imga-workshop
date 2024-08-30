@@ -46,7 +46,7 @@ Sau khi đăng nhập được rồi thì chúng ta tiến hành đóng gói th�
 
 Kiểm tra lại image đã được build chưa với lệnh `docker image ls` và cuối cùng là đẩy image lên trên repository mà chúng ta tạo ở bước trước
 
-![5-host-web-server](/images/5-host-web-server/5-5-host-web-server.png)
+![5-host-web-server](/images/5-host-web-server/5-5-5-push-docker-image-to-ecr.png)
 
 Vào trong repository đó để kiểm tra
 
