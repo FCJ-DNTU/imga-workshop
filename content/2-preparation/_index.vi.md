@@ -21,4 +21,4 @@ pre = "2. "
 5. [Khởi động 2 máy EC2](2-5-launch-ec2-instances)
 6. [Gán IAM Roles và thiết lập cài đặt Metadata cho các EC2](2-6-attach-iam-roles-and-configure-ec2-metadata)
 7. [Thiết lập NAT Gateway](2-7-setup-nat-gateway)
-8. [Tự động cài đặt, triển khai](2-6-auto-installation)
+8. [Tự động cài đặt, triển khai](2-8-auto-installation)

@@ -21,4 +21,4 @@ At the end of this section, I will provide more details about the bash script an
 5. [Launch 2 EC2 Instances](2-5-launch-ec2-instances)
 6. [Attach IAM Roles and configure EC2 metadata](2-6-attach-iam-roles-and-configure-ec2-metadata)
 7. [Setup NAT Gateway](2-7-setup-nat-gateway)
-8. [Auto deployment and installation](2-6-auto-installation)
+8. [Auto deployment and installation](2-8-auto-installation)

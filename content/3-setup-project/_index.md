@@ -12,5 +12,5 @@ In this section, we will clone the project from Github onto the EC2 instance in 
 
 #### Content
 
-1. [Clone the example project](3-1-fork-example-repository)
+1. [Clone the example project](3-1-folk-example-repository)
 2. [Install Git and Docker](3-2-install-docker-and-git)
