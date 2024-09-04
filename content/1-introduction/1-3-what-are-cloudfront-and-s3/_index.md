@@ -24,7 +24,7 @@ To enable faster deployment, CloudFront uses a caching mechanism on the distribu
 
 #### S3 with CloudFront
 
-![s3_bucket](/images/s3_bucket.png)
+![s3-bucket](/images/s3-bucket.png)
 
 When using S3 with CloudFront, S3 must block public access and enable the hosting of static web applications. For CloudFront to access S3, CloudFront needs to configure an OAI (Origin Access Identity) so that S3 can authenticate CloudFront using a resource-based policy. Additionally, we can manage the lifecycle and versioning of data stored in S3. By combining this feature, we can effectively manage the cache of the distribution on CloudFront.
 
@@ -37,8 +37,8 @@ Even though there are two S3 buckets, both are private buckets, meaning public a
 
 For CloudFront to access objects in the website bucket, we need to set up a resource-based policy (a type of policy attached to AWS resources that dictates which principals can access the resource, with what permissions, and any access restrictions). Additionally, for S3 to recognize that CloudFront is the entity accessing it, CloudFront must create an OAI (Origin Access Identity), which acts like a registered identity assigned to the resource. S3 will use this identity to determine if CloudFront is allowed to access the resource.
 
-![s3_bucket_web_vi](/images/s3_bucket_web_en.png)
+![s3-bucket-web-en](/images/s3-bucket-web-en.png)
 
 Moreover, for the web server to upload images to S3, it needs an IAM Role with the necessary permissions to upload images to the S3 bucket.
 
-![s3_bucket_image_vi](/images/s3_bucket_images_en.png)
+![s3-bucket-images-en](/images/s3-bucket-images-en.png)

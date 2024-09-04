@@ -24,7 +24,7 @@ CloudFront sẽ cần một nguồn dữ liệu, gọi là Origin để nó có 
 
 #### S3 với CloudFront
 
-![s3_bucket](/images/s3_bucket.png)
+![s3-bucket](/images/s3-bucket.png)
 
 Khi S3 dùng với CloudFront, thì S3 sẽ cần phải chặn các truy cập công cộng, và mở chức năng host ứng dụng web tĩnh. Và để CloudFront có thể truy cập vào được S3, thì ở phía CloudFront sẽ cần phải cài OAI để S3 có thể xác thực được CloudFront với resource-based policy. Ngoài ra chúng ta có thể quản lý vòng đời cũng như là phiên bản của dữ liệu được lưu trong S3, kết hợp tính năng này chúng ta sẽ quản lý tốt bộ nhớ đêm của bản phân phối trên CloudFront.
 
@@ -37,8 +37,8 @@ Tuy là có 2 S3 Buckets, nhưng cả 2 Bucket này để là private Buckets, k
 
 Như vậy, để CloudFront có thể lấy được object ở trong Bucket Website, thì chúng ta cần phải thiết lập resource-base policy (là một dạng policy đi kèm với tài nguyên của AWS, nó sẽ quyết định xem là Principal nào sẽ có thể access được, với những quyền hạn gì, cũng như là những giới hạn truy cập). Ngoài ra, để mà S3 có thể biết được là CloudFront có phải đang truy cập hay không, thì CloudFront cần phải tạo OAI (Origin Access Identify), giống như kiểu mình sẽ đăng ký định danh, và gán cho resource đó, S3 sẽ dựa vào định danh để để cho phép resource này có được phép truy cập vào hay không.
 
-![s3_bucket_web_vi](/images/s3_bucket_web_vi.png)
+![s3-bucket-web-vi](/images/s3-bucket-web-vi.png)
 
 Còn lại, để Webserver có thể tải ảnh được lên trên S3, thì cần phải có IAM Role với các quyền cần thiết để có thể tải được image lên trên S3.
 
-![s3_bucket_image_vi](/images/s3_bucket_images_vi.png)
+![s3-bucket-images-vi](/images/s3-bucket-images-vi.png)
