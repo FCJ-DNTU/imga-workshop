@@ -8,9 +8,11 @@ pre = "2. "
 
 #### Preparation
 
-Before we go to configure core resources, firstly, we'll need to configure other minor resources.
+To smoothly complete this workshop, we need to go through the preparation steps below to set up the necessary infrastructure components and resources. This will help ensure the lab runs as efficiently as possible with minimal errors.
 
-##### Content
+At the end of this section, I will provide more details about the bash script and the workflow for GitHub Actions.
+
+#### Content
 
 1. [Setup VPC](2-1-setup-vpc)
 2. [Setup VPC Peering](2-2-setup-vpc-peering)

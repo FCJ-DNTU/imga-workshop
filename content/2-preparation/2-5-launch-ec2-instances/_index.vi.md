@@ -1,5 +1,5 @@
 +++
-title = "Khởi động 2 máy EC2"
+title = "Khởi tạo 2 máy EC2"
 date = 2024
 weight = 5
 chapter = false

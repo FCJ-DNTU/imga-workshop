@@ -7,13 +7,13 @@ chapter = false
 
 # IMGA - Trích xuất dữ liệu bảng thành Excel
 
-Trong bài workshop này, chúng ta sẽ triển khai một ứng dụng lên hạ tầng đám mây AWS.
+Trong bài workshop này, chúng ta sẽ triển khai một ứng dụng lên hạ tầng đám mây AWS. Các bạn có thể xem qua về mục tiêu của ứng dụng mà chúng ta sẽ triển khai là gì. Dưới đây là mô hình tổng quát của ứng dụng:
 
 ![overview](/images/1-introduction/overview.png)
 
 #### Nội dung chính
 
-Trong bài này, chúng ta sẽ đi qua một số bước dưới đây:
+Để có thể triển khai được hạ tầng của ứng dụng, thì chúng ta sẽ thực hiện các bước chính ở bên dưới để triển khai lần lượt hạ tầng của ứng dụng.
 
 1. [Introduction](1-introduction)
 2. [Preparation](2-preparation)

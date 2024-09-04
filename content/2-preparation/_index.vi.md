@@ -8,9 +8,11 @@ pre = "2. "
 
 #### Các bước chuẩn bị
 
-Trước khi đi vào cài đặt các tài nguyên chính, thì đầu tiên chúng ta sẽ cài đặt các tài nguyên khác trước.
+Để có thể làm được bài workshop này trơn chu, thì chúng ta cần phải đi qua các bước chuẩn bị bên dưới để chuẩn bị các thành phần ở trong hạ tầng, các tài nguyên để làm bài lab này đạt được hiệu quả cao nhất, ít lỗi nhất.
 
-##### Nội dung
+Ở cuối phần này, mình sẽ nói rõ hơn về bash script, cũng như là workflow cho Github Actions.
+
+#### Nội dung
 
 1. [Thiết lập VPC](2-1-setup-vpc)
 2. [Thiết lập VPC Peering](2-2-setup-vpc-peering)

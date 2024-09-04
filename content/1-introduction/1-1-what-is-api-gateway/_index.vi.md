@@ -6,6 +6,8 @@ chapter = false
 pre = "1.1. "
 +++
 
+![api-gateway](/images/api-gateway.png)
+
 #### Khái niệm cơ bản
 
 Trong hệ thống của chúng ta, không chỉ có APIs / Endpoints từ máy chủ web chính, mà hệ thống của chúng ta còn có các APIs / Endpoints từ các máy chủ khác trong hệ thống, hoặc là các APIs / Endpoints từ các dịch vụ của AWS khác. Và chúng ta muốn mở các APIs / Endpoints này cho người dùng cuối, các ứng dụng bên thứ ba, hay chính hệ thống của chúng ta sử dụng. Khi đó thì chúng ta sẽ cần tới một dịch vụ để quản lý tập trung tất cả các APIs / Endpoints này về một dịch vụ duy nhất.
@@ -38,8 +40,11 @@ Từ đó mình có khái niệm `method request` và `integration request`. Tro
 - Method response: được ứng dụng khách nhận lại.
 - Integration response: được định nghĩa bởi máy chủ.
 
-![api_gateway_flow-vi](/images/1-introduction/api_gateway_flow-vi.png)
+Cho nên, các API Developer sẽ phải kiểm soát được các request từ người dùng, hạ tầng của chúng ta càng nhiều ứng dụng thì sẽ cần phải quản lý tốt hơn. Vì API Gateway là một cánh cổng, để toàn bộ tài nguyên bên trong được an toàn, thì mình cần sẽ phải bảo vệ được cánh cổng đó.
 
 #### VPC Link
 
-Là một tính năng dùng "private link", giúp cho API Gateway có thể kết nối được tới một Private VPC thông qua một đường mạng riêng.
+Là một tính năng dùng "private link", giúp cho API Gateway có thể kết nối được tới một Private VPC thông qua một đường mạng riêng. VPC Link cũng cần phải có một ENI (Elastic Network Interface) để có thể nhận được traffic từ API Gateway. Trong mô hình của hạ tầng thì các bạn có thể sẽ không thấy, nhưng trong quá trình cấu hình VPC Link, thì các bạn sẽ thấy là VPC Link đang chờ được khởi tạo khi ENI đang được khởi tạo.
+
+Dưới đây là mô hình tổng quan về cách mà API Gateway giao tiếp với các dịch vụ trong Private VPC:
+![api_gateway_flow-vi](/images/1-introduction/api_gateway_flow-vi.png)

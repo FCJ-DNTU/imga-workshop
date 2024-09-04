@@ -16,10 +16,29 @@ Trong trường hợp chúng ta triển khai một ứng dụng web với S3, nh
 
 #### CloudFront
 
+![cloudfront](/images/cloudfront.png)
+
 CloudFront sẽ cần một nguồn dữ liệu, gọi là Origin để nó có thể tạo các bản phân phối dựa trên dữ liệu gốc từ Origin. Khi tạo xong thì CloudFront sẽ phân phối dữ liệu của ứng dụng web đó tới các Edge Locations cần triển khai, quản lý các bản phân phối đó.
 
 Để có thể triển khai nhanh, thì CloudFront sẽ áp dụng cơ chế lưu bộ nhớ đệm trên bản phân phối đó, khi quá thời hạn (thường là một ngày) thì CloudFront sẽ về lại Origin để yêu cầu dữ liệu mới, nếu như không có gì mới thì CloudFront cập nhật lại thời hạn cho bản phân phối đó.
 
 #### S3 với CloudFront
 
+![s3_bucket](/images/s3_bucket.png)
+
 Khi S3 dùng với CloudFront, thì S3 sẽ cần phải chặn các truy cập công cộng, và mở chức năng host ứng dụng web tĩnh. Và để CloudFront có thể truy cập vào được S3, thì ở phía CloudFront sẽ cần phải cài OAI để S3 có thể xác thực được CloudFront với resource-based policy. Ngoài ra chúng ta có thể quản lý vòng đời cũng như là phiên bản của dữ liệu được lưu trong S3, kết hợp tính năng này chúng ta sẽ quản lý tốt bộ nhớ đêm của bản phân phối trên CloudFront.
+
+Trong bài này, chúng ta sẽ có 2 buckets được dùng cho 2 mục đích khác nhau:
+
+- Bucket để lưu trữ hình ảnh của người dùng.
+- Bucket để lưu trữ nội dung của Website, được dùng với CloudFront.
+
+Tuy là có 2 S3 Buckets, nhưng cả 2 Bucket này để là private Buckets, không cho phép các truy cập công cộng có thể tới các objects ở trong 2 Buckets.
+
+Như vậy, để CloudFront có thể lấy được object ở trong Bucket Website, thì chúng ta cần phải thiết lập resource-base policy (là một dạng policy đi kèm với tài nguyên của AWS, nó sẽ quyết định xem là Principal nào sẽ có thể access được, với những quyền hạn gì, cũng như là những giới hạn truy cập). Ngoài ra, để mà S3 có thể biết được là CloudFront có phải đang truy cập hay không, thì CloudFront cần phải tạo OAI (Origin Access Identify), giống như kiểu mình sẽ đăng ký định danh, và gán cho resource đó, S3 sẽ dựa vào định danh để để cho phép resource này có được phép truy cập vào hay không.
+
+![s3_bucket_web_vi](/images/s3_bucket_web_vi.png)
+
+Còn lại, để Webserver có thể tải ảnh được lên trên S3, thì cần phải có IAM Role với các quyền cần thiết để có thể tải được image lên trên S3.
+
+![s3_bucket_image_vi](/images/s3_bucket_images_vi.png)

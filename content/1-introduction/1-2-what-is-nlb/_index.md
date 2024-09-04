@@ -6,6 +6,8 @@ chapter = false
 pre = "1.2. "
 +++
 
+![elastic-load-balancing](/images/elastic-load-balancing.png)
+
 #### Basic Concepts
 
 Load balancing is a feature that helps evenly distribute network traffic and requests to different targets. Since it is a feature, it operates at the logic layer, and can be provided by a server or even as a separate feature managed by a dedicated device, known as a load balancer.
@@ -25,3 +27,20 @@ In this case, the target of the NLB will be the EC2 server. We will use the NLB 
 #### Health Checks for Targets
 
 The load balancer needs to know whether the targets it forwards packets to are still operational. The load balancer sends a request to the target server or directly to the server (if the server is the target). If the load balancer does not receive a response, it will remove or "forget" that target to avoid forwarding packets to it.
+
+In this workshop, we will use a Network Load Balancer (NLB) placed in the Private VPC. It will act as an intermediary, forwarding user requests (packets) from the API Gateway to the web server inside the Private VPC.
+
+![network-load-balancer](/images/network-load-balancer.png)
+
+The Network Load Balancer doesn’t pay attention to the protocol or request details of the packet. It only focuses on the destination address in the packet. As a result, targets in the NLB receive packets slightly faster compared to ALB. In this workshop, the target is a single EC2 instance. However, in reality, when the application has more users, a single EC2 instance won't be able to handle a large number of user requests.
+
+![single_ec2_vi](/images/1-introduction/single_ec2_en.png)
+
+Therefore, we have two solutions:
+
+- Manually increase the number of EC2 instances in the infrastructure. However, with this approach, when user traffic decreases, we would need to manually turn off an EC2 instance, and when traffic increases, we would have to turn it back on, which is time-consuming.
+- Use an Auto Scaling Group. With this service, the Load Balancer will automatically add EC2 instances to the infrastructure, adjusting the number to match the incoming requests, ensuring the system can handle the load.
+
+![auto_scaling_group_vi](/images/1-introduction/auto_scaling_group_en.png)
+
+In this setup, the NLB will evenly distribute packets to each instance in the group.

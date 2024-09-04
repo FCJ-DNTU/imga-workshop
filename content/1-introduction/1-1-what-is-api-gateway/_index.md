@@ -6,6 +6,8 @@ chapter = false
 pre = "1.1. "
 +++
 
+![api-gateway](/images/api-gateway.png)
+
 #### Basic Concepts
 
 In our system, not only do we have APIs/Endpoints from the main web server, but we also have APIs/Endpoints from other servers in the system, or from other AWS services. We want to expose these APIs/Endpoints to end-users, third-party applications, or our own system. In this case, we need a service to centrally manage all these APIs/Endpoints into a single service.
@@ -38,8 +40,11 @@ Similarly, when the server responds, the response data structure may not match t
 - Method response: received by the client application.
 - Integration response: defined by the server.
 
-![api_gateway_flow-en](/images/1-introduction/api_gateway_flow-en.png)
+Therefore, API Developers need to manage user requests efficiently. The more applications we have in our infrastructure, the better we need to manage them. Since API Gateway is the gateway to protect all internal resources, we need to ensure that this gateway is well secured.
 
 #### VPC Link
 
-It is a feature using "private link" that allows API Gateway to connect to a Private VPC through a private network link.
+VPC Link is a feature that uses a "private link," allowing API Gateway to connect to a Private VPC through a private network. VPC Link also requires an ENI (Elastic Network Interface) to receive traffic from API Gateway. In the infrastructure model, you might not see this explicitly, but during the VPC Link setup process, you'll notice that the VPC Link is waiting to be initialized when the ENI is being created.
+
+Below is an overview of how API Gateway interacts with services inside the Private VPC:
+![api_gateway_flow-vi](/images/1-introduction/api_gateway_flow-en.png)

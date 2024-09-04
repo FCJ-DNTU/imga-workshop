@@ -7,13 +7,13 @@ chapter = false
 
 # IMGA - Extract table from image to Excel
 
-In this workshop, we'll deploy a application which AWS Cloud.
+In this workshop, we'll deploy a application which AWS Cloud. You can check the objective of application which we're going to deploy it. The general diagram of application likes below:
 
 ![overview](/images/1-introduction/overview.png)
 
 #### Main Content
 
-In this workshop, we'll go through these steps:
+To deploy the infrastructure of application as well as the application, we need go through these parts to deploy the infrastructure step-by-step:
 
 1. [Introduction](1-introduction)
 2. [Preparation](2-preparation)
